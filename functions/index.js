@@ -1,11 +1,25 @@
 'use strict';
+const app = require('firebase/app');
+require('firebase/auth');
+require('firebase/firestore');
 
 const functions = require('firebase-functions');
-const admin = require('firebase-admin');
+// const admin = require('firebase-admin');
 const {WebhookClient} = require('dialogflow-fulfillment');
+const {Card, Suggestion} = require('dialogflow-fulfillment');
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCcOvnTMYAJFBdZuzQawx8Z7tCgCXfylCo",
+    authDomain: "crollo-xxoykw.firebaseapp.com",
+    databaseURL: "https://crollo-xxoykw.firebaseio.com/",
+    projectId: "crollo-xxoykw",
+    storageBucket: "",
+    appId:"1:716632137718:web:75ba185462453105"
+};
 
 process.env.DEBUG = 'dialogflow:*'; // enables lib debugging statements
-admin.initializeApp(functions.config().firebase);
+
+/*admin.initializeApp(functions.config().firebase);
 const db = admin.firestore();
 
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, response) => {
@@ -53,4 +67,4 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   intentMap.set('ReadFromFirestore', readFromDb);
   intentMap.set('WriteToFirestore', writeToDb);
   agent.handleRequest(intentMap);
-});
+});*/
