@@ -6,6 +6,7 @@ class Home extends Component {
     render() {
         return (
             <div>
+              home
                 <section className="home-banner">
                     <img src={bannerImg} />
                 </section>

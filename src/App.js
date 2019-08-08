@@ -1,37 +1,41 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-
+import React from 'react';
+import { Switch, Route, withRouter } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import './App.css';
+import Home from './components/Home';
+import Chatbot from './components/Chatbot';
+import SignUp from './components/SignUp';
+import Profile from './components/Profile';
+import Dashboard from './components/Dashboard';
+import Messages from './components/Messages';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+const routes = [
+  { path: '/', Component: Home },
+  { path: '/chatbot', Component: Chatbot },
+  { path: '/signup', Component: SignUp },
+  { path: '/profile', Component: Profile },
+  { path: '/dashboard', Component: Dashboard },
+  { path: '/messages', Component: Messages }
+]
 
-    this.state = {
-      navStatus: 0      // 0 = home, 1 = creating account, 2 = dashboard
-    }
-  }
-
-  render() {
-    return (
-      <div className="container">
-        <Router>
-          <nav className="navbar d-flex justify-content-left">
-            <Link className="navbar-brand text-center center-block" to="/">
-              <span>
-                <p>Test Navbar</p>
-              </span>
-            </Link>
-            <Link className="nav-item" to="/test">
-              <span>
-                <p>Redirect</p>
-              </span>
-            </Link>
-          </nav>
-        </Router>
-      </div>
-    );
-  }
+function Main({ location }) {
+  return (
+    <TransitionGroup className="transition-group">
+      <CSSTransition
+        key={location.key}
+        timeout={{ enter: 300, exit: 300 }}
+        classNames={'fade'}
+      >
+        <section className="route-section">
+          <Switch location={location}>
+            {routes.map(({path,Component}) => (
+              <Route key={path} exact path={path} component={Component}></Route>
+            ))}
+          </Switch>
+        </section>
+      </CSSTransition>
+    </TransitionGroup>
+  );
 }
 
-export default App;
+export default withRouter(Main);
