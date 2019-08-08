@@ -1,13 +1,17 @@
 import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import './Main.css';
-import Intro from './Intro';
-import Home from './Home';
+import './App.css';
+import Home from './components/Home';
+import Chatbot from './components/Chatbot';
+import SignUp from './components/SignUp';
+import Profile from './components/Profile';
+import Dashboard from './components/Dashboard';
+import Messages from './components/Messages';
 
 const routes = [
   { path: '/', Component: Home },
-  { path: '/chatbot', Component: Chatbot }
+  { path: '/chatbot', Component: Chatbot },
   { path: '/signup', Component: SignUp },
   { path: '/profile', Component: Profile },
   { path: '/dashboard', Component: Dashboard },

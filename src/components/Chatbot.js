@@ -4,7 +4,7 @@ class Chatbot extends Component {
     render() {
         return (
             <div>
-
+              chatbot page
             </div>
         );
     }
