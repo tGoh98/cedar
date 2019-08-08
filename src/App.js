@@ -1,36 +1,37 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import React from 'react';
+import { Switch, Route, withRouter } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import './Main.css';
+import Intro from './Intro';
+import Home from './Home';
 
-import './App.css';
+const routes = [
+  { path: '/', Component: Home },
+  { path: '/chatbot', Component: Chatbot }
+  { path: '/signup', Component: SignUp },
+  { path: '/profile', Component: Profile },
+  { path: '/dashboard', Component: Dashboard },
+  { path: '/messages', Component: Messages }
+]
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      trNav = 0
-    }
-  }
-  render() {
-    return (
-      <div className="container">
-        <Router>
-          <nav className="navbar d-flex justify-content-left">
-            <Link className="navbar-brand text-center center-block" to="/">
-              <span>
-                <p>Test Navbar</p>
-              </span>
-            </Link>
-            <Link className="nav-item" to="/test">
-              <span>
-                <p>Redirect</p>
-              </span>
-            </Link>
-          </nav>
-        </Router>
-      </div>
-    );
-  }
+function Main({ location }) {
+  return (
+    <TransitionGroup className="transition-group">
+      <CSSTransition
+        key={location.key}
+        timeout={{ enter: 300, exit: 300 }}
+        classNames={'fade'}
+      >
+        <section className="route-section">
+          <Switch location={location}>
+            {routes.map(({path,Component}) => (
+              <Route key={path} exact path={path} component={Component}></Route>
+            ))}
+          </Switch>
+        </section>
+      </CSSTransition>
+    </TransitionGroup>
+  );
 }
 
-export default App;
+export default withRouter(Main);
