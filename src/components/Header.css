@@ -1,0 +1,9 @@
+.navLinks {
+  text-decoration: none;
+  color: grey;
+}
+
+.navLinks:hover {
+  text-decoration: none;
+  color: black;
+}

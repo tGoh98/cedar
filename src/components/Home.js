@@ -9,7 +9,7 @@ class Home extends Component {
             <div>
               <div className="home-banner">
                 <div className="banner-cover" />
-                <img className="banner-img" src={bannerImg} />
+                <img className="banner-img" src={bannerImg} alt="cedar trees" />
                 <h3 className="banner-header">Cedar</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id.</p>
               </div>
