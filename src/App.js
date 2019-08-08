@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+
 import './App.css';
 import Home from './components/Home';
 import Chatbot from './components/Chatbot';
@@ -28,7 +29,7 @@ function Main({ location }) {
       >
         <section className="route-section">
           <Switch location={location}>
-            {routes.map(({path,Component}) => (
+            {routes.map(({ path, Component }) => (
               <Route key={path} exact path={path} component={Component}></Route>
             ))}
           </Switch>
