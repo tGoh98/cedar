@@ -17,7 +17,7 @@ class Home extends Component {
                 <div className="container sign-up">
                     <div className="sign-up-opt row">
                         <div className="start-borrow col">
-                            <h4>Start Borrowing</h4>
+                            <h4>start Borrowing</h4>
                             <p>Info about borrowing</p>
                             <a href="/chatbot" role="button" className="btn btn-info">Get Started</a>
                         </div>
