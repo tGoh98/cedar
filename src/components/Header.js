@@ -24,6 +24,7 @@ class Header extends Component {
               <Nav.Link key={ path }><Link className="navLinks" to={path}>{path}</Link></Nav.Link>
             ))}
           </Nav>
+          <button type="button" className="btn btn-success"><Link to='/signup' style={{textDecoration: 'none', color: 'white'}}>Login</Link></button>
         </Navbar>
       </div>
     );
