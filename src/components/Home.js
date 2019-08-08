@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-
+import '../stylesheets/Home.css'
 import bannerImg from '../images/banner.jpg'
 
 class Home extends Component {
     render() {
         return (
-            <div>
-              home
-                <section className="home-banner">
-                    <img src={bannerImg} />
-                </section>
+            <div className="container">
+                home
+                <div className="home-banner">
+                    <img className="banner-img" src={bannerImg} />
+                </div>
             </div>
         );
     }
