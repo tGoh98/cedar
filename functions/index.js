@@ -1,45 +1,32 @@
 'use strict';
-const app = require('firebase/app');
-require('firebase/auth');
-require('firebase/firestore');
 
 const functions = require('firebase-functions');
-// const admin = require('firebase-admin');
+const admin = require('firebase-admin');
 const {WebhookClient} = require('dialogflow-fulfillment');
-const {Card, Suggestion} = require('dialogflow-fulfillment');
-
-const firebaseConfig = {
-    apiKey: "AIzaSyCcOvnTMYAJFBdZuzQawx8Z7tCgCXfylCo",
-    authDomain: "crollo-xxoykw.firebaseapp.com",
-    databaseURL: "https://crollo-xxoykw.firebaseio.com/",
-    projectId: "crollo-xxoykw",
-    storageBucket: "",
-    appId:"1:716632137718:web:75ba185462453105"
-};
 
 process.env.DEBUG = 'dialogflow:*'; // enables lib debugging statements
-
-app.initializeApp(functions.config().firebase);
-const db = app.firestore();
+admin.initializeApp(functions.config().firebase);
+const db = admin.firestore();
 
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, response) => {
   const agent = new WebhookClient({ request, response });
 
   function writeToDb (agent) {
     // Get parameter from Dialogflow with the string to add to the database
-    const databaseEntry = agent.parameters.databaseEntry;
+    const firstName = agent.parameters.firstName;
+    // const lastName = agent.parameters.lastName;
 
     // Get the database collection 'dialogflow' and document 'agent' and store
     // the document  {entry: "<value of database entry>"} in the 'agent' document
-    const dialogflowAgentRef = db.collection('dialogflow').doc('agent');
+    const dialogflowAgentRef = db.collection('borrowers').doc('agent');
     return db.runTransaction(t => {
-      t.set(dialogflowAgentRef, {entry: databaseEntry});
+      t.set(dialogflowAgentRef, {entry: firstName});
       return Promise.resolve('Write complete');
     }).then(doc => {
-      agent.add(`Wrote "${databaseEntry}" to the Firestore database.`);
+      agent.add(`Wrote "${firstName}" to the Firestore database.`);
     }).catch(err => {
       console.log(`Error writing to Firestore: ${err}`);
-      agent.add(`Failed to write "${databaseEntry}" to the Firestore database.`);
+      agent.add(`Failed to write "${firstName}" to the Firestore database.`);
     });
   }
 
