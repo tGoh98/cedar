@@ -19,8 +19,8 @@ const firebaseConfig = {
 
 process.env.DEBUG = 'dialogflow:*'; // enables lib debugging statements
 
-/*admin.initializeApp(functions.config().firebase);
-const db = admin.firestore();
+app.initializeApp(functions.config().firebase);
+const db = app.firestore();
 
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, response) => {
   const agent = new WebhookClient({ request, response });
@@ -67,4 +67,4 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   intentMap.set('ReadFromFirestore', readFromDb);
   intentMap.set('WriteToFirestore', writeToDb);
   agent.handleRequest(intentMap);
-});*/
+});
