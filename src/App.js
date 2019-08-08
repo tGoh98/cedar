@@ -8,9 +8,10 @@ class App extends Component {
     super(props);
 
     this.state = {
-      trNav = 0
+      navStatus: 0      // 0 = home, 1 = creating account, 2 = dashboard
     }
   }
+
   render() {
     return (
       <div className="container">
