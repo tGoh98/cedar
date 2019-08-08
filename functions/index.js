@@ -52,6 +52,6 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   // Map from Dialogflow intent names to functions to be run when the intent is matched
   let intentMap = new Map();
   intentMap.set('ReadFromFirestore', readFromDb);
-  intentMap.set('WriteToFirestore', writeToDb);
+  intentMap.set('cedar.profile.create.name', writeToDb);
   agent.handleRequest(intentMap);
 });
