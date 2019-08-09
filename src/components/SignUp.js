@@ -152,7 +152,7 @@ class SignUp extends Component {
                         <div className="form-group">
                             <label htmlFor="firstName">Name</label>
                             <input type="text" className="form-control" id="firstName" aria-describedby="nameHelp" onChange={this.handleName} />
-                            <small id="nameHelp" class="form-text text-muted">First and Last</small>
+                            <small id="nameHelp" className="form-text text-muted">First and Last</small>
                         </div>
                         <div className="form-row">
                             <div className="form-group col">

@@ -18,7 +18,7 @@ function Main({ location }) {
 
   return (
     <div>
-      <Header />
+      <Header user={user} />
       <TransitionGroup className="transition-group">
         <CSSTransition
           key={location.key}
