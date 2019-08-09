@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
@@ -11,16 +11,10 @@ import Dashboard from './components/Dashboard';
 import Messages from './components/Messages';
 import Header from './components/Header';
 
-const routes = [
-  { path: '/', Component: Home },
-  { path: '/chatbot', Component: Chatbot },
-  { path: '/signup', Component: SignUp },
-  { path: '/profile', Component: Profile },
-  { path: '/dashboard', Component: Dashboard },
-  { path: '/messages', Component: Messages }
-]
-
 function Main({ location }) {
+  const [user, setUser] = useState('mark');
+  const [selectedUser, setSelectedUser] = useState('bill');
+
   return (
     <div>
       <Header />
@@ -32,14 +26,16 @@ function Main({ location }) {
         >
           <section className="route-section">
             <Switch location={location}>
-              {routes.map(({ path, Component }) => (
-                <Route key={path} exact path={path} component={Component}></Route>
-              ))}
+              <Route exact path='/' render={(props) => <Home user={user} selectedUser={selectedUser} />}></Route>
+              <Route exact path='/chatbot' render={(props) => <Chatbot user={user} selectedUser={selectedUser} />}></Route>
+              <Route exact path='/signup' render={(props) => <SignUp user={user} selectedUser={selectedUser} />}></Route>
+              <Route exact path='/profile' render={(props) => <Profile user={user} selectedUser={selectedUser} />}></Route>
+              <Route exact path='/dashboard' render={(props) => <Dashboard user={user} selectedUser={selectedUser} />}></Route>
+              <Route exact path='/messages' render={(props) => <Messages user={user} selectedUser={selectedUser} />}></Route>
             </Switch>
           </section>
         </CSSTransition>
       </TransitionGroup>
-
     </div>
   );
 }
