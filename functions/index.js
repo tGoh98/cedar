@@ -1,14 +1,14 @@
 'use strict';
-const app = require('firebase/app');
-require('firebase/auth');
-require('firebase/firestore');
+const app = require('firebase/app'); //
+require('firebase/auth'); //
+require('firebase/firestore'); //
 
 const functions = require('firebase-functions');
 // const admin = require('firebase-admin');
 const { WebhookClient } = require('dialogflow-fulfillment');
 const { Card, Suggestion } = require('dialogflow-fulfillment');
 
-const firebaseConfig = {
+const firebaseConfig = { //
   apiKey: "AIzaSyCcOvnTMYAJFBdZuzQawx8Z7tCgCXfylCo",
   authDomain: "crollo-xxoykw.firebaseapp.com",
   databaseURL: "https://crollo-xxoykw.firebaseio.com/",
@@ -19,13 +19,15 @@ const firebaseConfig = {
 
 process.env.DEBUG = 'dialogflow:*'; // enables lib debugging statements
 
-/*admin.initializeApp(functions.config().firebase);
-const db = admin.firestore();
+app.initializeApp(firebaseConfig); //
+const db = app.firestore(); //
+
+//db.collection('borrowers').doc('') //
 
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, response) => {
   const agent = new WebhookClient({ request, response });
 
-  function writeToDb (agent) {
+  function writeToDb(agent) {
     // Get parameter from Dialogflow with the string to add to the database
     const databaseEntry = agent.parameters.databaseEntry;
 
@@ -33,7 +35,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     // the document  {entry: "<value of database entry>"} in the 'agent' document
     const dialogflowAgentRef = db.collection('dialogflow').doc('agent');
     return db.runTransaction(t => {
-      t.set(dialogflowAgentRef, {entry: databaseEntry});
+      t.set(dialogflowAgentRef, { entry: databaseEntry });
       return Promise.resolve('Write complete');
     }).then(doc => {
       agent.add(`Wrote "${databaseEntry}" to the Firestore database.`);
@@ -43,7 +45,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     });
   }
 
-  function readFromDb (agent) {
+  function readFromDb(agent) {
     // Get the database collection 'dialogflow' and document 'agent'
     const dialogflowAgentDoc = db.collection('dialogflow').doc('agent');
 
@@ -67,4 +69,4 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   intentMap.set('ReadFromFirestore', readFromDb);
   intentMap.set('WriteToFirestore', writeToDb);
   agent.handleRequest(intentMap);
-});*/
+});
