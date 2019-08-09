@@ -1,3 +1,8 @@
+.profile-head {
+  margin-top: 2rem;
+}
+
+
 .profileImg {
   max-width:100%;
   border-radius: 50%;
@@ -7,14 +12,15 @@
 }
 
 .row {
-  box-shadow: 3px 7px lightGrey;
-  background-color: #DCDCDC;
-  padding: 10px;
+  /* box-shadow: 3px 7px lightGrey; */
+  box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+  background-color: white;
+  padding: 3rem;
 }
 
 .orgCard {
   background-color: white;
-  box-shadow: 2px 5px lightGrey;
-  padding-left: 5px;
-  padding-right: 5px;
+  /* box-shadow: 2px 5px lightGrey; */
+  box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+  padding: 5rem;
 }
