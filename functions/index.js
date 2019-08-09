@@ -30,7 +30,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
       var context = response['outputContexts'];
       agent.add(context);
       for (i = 0; i < context.length; i++) {
-          if context[i].includes('/cedarprofilecreate-followup') {
+          if (context[i].includes('/cedarprofilecreate-followup')) {
               data['name'] = context[i]['parameters']['firstName'] + " " + context[i]['parameters']['lastName'];
               
               data['region'] = context[i]['parameters']['country'];
