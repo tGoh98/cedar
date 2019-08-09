@@ -1,5 +1,11 @@
 .container {
   height: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.title {
+  font-size: 3em;
 }
 
 .centered {
@@ -44,7 +50,8 @@
     text-align: center;
 }
 
-.sign-up-opt {
-    padding-top: 5rem;
-    text-align: center;
+.row-home {
+  box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+  background-color: white;
+  padding: 3rem;
 }

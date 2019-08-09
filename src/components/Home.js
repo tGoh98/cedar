@@ -10,14 +10,19 @@ class Home extends Component {
             <div>
               <div className="home-banner">
                 <div className="centered">
-                  <h1>Welcome to Cedar</h1>
+                  <h1 className="title">Welcome to Cedar</h1>
                   <h4>A community dedicated to connecting borrowers and lenders</h4>
                 </div>
                 <div className="banner-cover" />
                 <img className="banner-img" src={bannerImg} alt="cedar trees" />
               </div>
-              <div className="container sign-up">
-                <div className="sign-up-opt row">
+              <div className="container content">
+                <div className="row row-home">
+                  <h3>What does Cedar do?</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <br />
+                <div className="row row-home">
                   <div className="start-borrow col" style={{borderRightWidth: 1, borderRightStyle: 'solid', borderRightColor: 'black'}}>
                     <h4>Looking to apply for a loan?</h4>
                     <p>Chat with our interative bot, Juniper, to create a profile and find compatible lenders.</p>

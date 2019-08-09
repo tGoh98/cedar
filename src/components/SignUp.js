@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../stylesheets/SignUp.css'
 import avatarPlace from '../images/avatar.png';
+import { Link } from 'react-router-dom';
 import Footer from './Footer';
 
 function loadCountries(countryData) {
@@ -200,7 +201,7 @@ class SignUp extends Component {
                                 <small id="addTag" className="form-text text-muted">Separate tags with commas</small>
                             </div>
                             <div className="form-group">
-                                <button type="button" className="btn btn-info" onClick={this.onSubmit}>Submit</button>
+                                <button type="button" className="btn btn-info" onClick={this.onSubmit}><Link className="navLinks" style={{color: 'white'}} to='/profile'>Submit</Link></button>
                             </div>
                         </form>
                     </div>
