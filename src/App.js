@@ -11,10 +11,33 @@ import Dashboard from './components/Dashboard';
 import Messages from './components/Messages';
 import Header from './components/Header';
 
+const app = require('firebase/app');
+require('firebase/auth');
+require('firebase/firestore');
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCcOvnTMYAJFBdZuzQawx8Z7tCgCXfylCo",
+  authDomain: "crollo-xxoykw.firebaseapp.com",
+  databaseURL: "https://crollo-xxoykw.firebaseio.com/",
+  projectId: "crollo-xxoykw",
+  storageBucket: "",
+  appId: "1:716632137718:web:75ba185462453105"
+};
+
+app.initializeApp(firebaseConfig);
+const db = app.firestore();
+
 function Main({ location }) {
   const [user, setUser] = useState('mark');
   const [selectedUser, setSelectedUser] = useState('bill');
   const [userType, setUserType] = useState('borrower');
+
+  console.log("Testing Database:");
+  var docRef = db.collection('borrowers').doc('i1ovtR7AgIjBtsYgHU8M');
+  docRef.get().then(function (doc) {
+    console.log(doc.data());
+  })
+  // console.log(db.collection('lenders'));
 
   return (
     <div>
