@@ -1,6 +1,18 @@
 {
     "data": [
         {
+            "userId": "mark",
+            "avatar": "zuck.jpg",
+            "name": "Mark Zuck",
+            "orgName": "Facebook",
+            "region": "USA",
+            "about": "Hey there! I'm Mark, an aspiring computer programmer. Feel free to shoot me a message to learn more about what Facebook does!",
+            "orgAbout": "Facebook is a company dedicated to giving people the power to build community and bring the world closer together. We were founded 15 years ago and have been growing at a tremendous rate ever since.",
+            "network": [
+                "bill"
+            ]
+        },
+        {
             "userId": "wildrydes",
             "avatar": "unicorn.jpeg",
             "name": "Jeff Bezos",
@@ -38,7 +50,7 @@
         },
         {
             "userId": "wildrydes",
-            "avatar": "unicorn.jpeg",
+            "avatar": "avatar.png",
             "name": "Jeff Bezos",
             "orgName": "Wild Rydes",
             "region": "Fantasia",
@@ -51,25 +63,13 @@
         {
             "userId": "greenback",
             "name": "Uncle Sam",
-            "avatar": "sam.png",
+            "avatar": "avatar.png",
             "orgName": "Greenback",
             "region": "USA",
             "about": "I'm Uncle Sam, an banker and an aspiring enterpreneur.",
             "orgAbout": "Greenback is a financial technology application that offers tax-evasion services.",
             "network": [
                 "kiva"
-            ]
-        },
-        {
-            "userId": "herlinda",
-            "name": "Herlinda",
-            "avatar": "caffeine.jpg",
-            "orgName": "Herlinda",
-            "region": "Brazil",
-            "about": "Hi I'm Herlinda, a farmer from Brazil.",
-            "orgAbout": "I had a low credit score, but now have a job and want to get a loan to buy my family a home.",
-            "network": [
-                "grameen"
             ]
         }
     ]

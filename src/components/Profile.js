@@ -18,7 +18,10 @@ class Profile extends Component {
               <img src={profilePic} className="profileImg" alt="profile" />
             </div>
             <div className="col-9 profile-head-text">
-              <h3>Mark Zuckerburg<button type="button" style={{ float: 'right' }} className="btn btn-info btn-sm">Edit Profile</button></h3>
+              <h3>
+                Mark Zuckerburg
+                {<button type="button" style={{ float: 'right' }} className="btn btn-info btn-sm">Edit Profile</button>}
+              </h3>
               <p className="text-muted">Facebook, Inc. | USA</p>
               <p>Hey there! I'm Mark, an aspiring computer programmer. Feel free to shoot me a message to learn more about what Facebook does!</p>
             </div>

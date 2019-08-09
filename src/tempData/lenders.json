@@ -1,6 +1,18 @@
 {
     "data": [
         {
+            "userId": "bill",
+            "avatar": "gates.jpg",
+            "name": "Bill Gates",
+            "orgName": "Microsoft",
+            "region": "USA",
+            "about": "Hi I'm Bill.",
+            "orgAbout": "$$",
+            "network": [
+                "mark"
+            ]
+        },
+        {
             "userId": "greenback",
             "avatar": "kiva.jpg",
             "name": "Sarah Ziegenfuss",
@@ -58,18 +70,6 @@
             "orgAbout": "HYDRA is a nonprofit focused on providing microloans to aspiring technology and science based startups. Since being founded, HYDRA has funded groundbreaking research throughout history.",
             "network": [
                 "wildrydes"
-            ]
-        },
-        {
-            "userId": "lender3",
-            "avatar": "avatar.png",
-            "name": "Muhammed Yunus",
-            "orgName": "Grameen America",
-            "region": "Bangladesh",
-            "about": "Hi I'm Muhammed, a social enterpreneur and banker. I founded Grameen Bank and Grameen America.",
-            "orgAbout": "Grameen America gives women in poverty financial education and guidance with the goal of establishing credit. Women in the program also receive a $1,500 microloan to start a business. ",
-            "network": [
-                "herlinda"
             ]
         }
     ]

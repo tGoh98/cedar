@@ -37,8 +37,17 @@ class Home extends Component {
               </div>
               <Footer />
             </div>
-        );
-    }
+            <div className="start-lend col">
+              <h4>Looking to lend to others?</h4>
+              <p>Tell us about the businesses you're interested in and we'll match you with suitable prospects.</p>
+              <button type="button" className="btn btn-info"><Link to='/signup' style={{ textDecoration: 'none', color: 'white' }}>Start investing</Link></button>
+            </div>
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default Home;
