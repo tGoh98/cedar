@@ -18,10 +18,16 @@ class Header extends Component {
     super(props);
     this.state = { isLoggedIn: false, show: false };
 
+    this.handleSwitch = this.handleSwitch.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleShow = this.handleShow.bind(this);
     this.handleSignOut = this.handleSignOut.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSwitch() {
+    if (this.props.userType === "borrower") this.props.setUserType("lender");
+    else this.props.setUserType("borrower");
   }
 
   handleClose() {
@@ -52,6 +58,7 @@ class Header extends Component {
               <Nav.Link key={path}><Link className="navLinks" to={path}>{path}</Link></Nav.Link>
             ))}
           </Nav>
+          <button type="button" className="btn btn-outline-info btn-switch" onClick={this.handleSwitch}>Switch Modes</button>
           {!this.state.isLoggedIn ? (
             <button type="button" className="btn btn-info" onClick={this.handleShow}>Login</button>
           ) : (
@@ -73,6 +80,7 @@ class Header extends Component {
             <Button variant="primary" onClick={this.handleSubmit}><Link className="navLinks" style={{ color: 'white' }} to='/profile'>
               Submit
           </Link></Button>
+
           </Modal.Footer>
         </Modal>
       </div>

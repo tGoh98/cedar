@@ -42,7 +42,8 @@ function Main({ location }) {
       currency: "USD"
     },
     orgName: "Facebook",
-    region: "Canada" });
+    region: "Canada"
+  });
   // db.collection('borrowers').get().then(function (data) {
   //   data.forEach(function(doc) {
   //       console.log(doc.id, " => ", doc.data());
@@ -67,7 +68,7 @@ function Main({ location }) {
 
   return (
     <div>
-      <Header user={user} />
+      <Header user={user} userType={userType} setUserType={setUserType} />
       <TransitionGroup className="transition-group">
         <CSSTransition
           key={location.key}
