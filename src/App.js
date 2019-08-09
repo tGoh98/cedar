@@ -11,7 +11,7 @@ import Dashboard from './components/Dashboard';
 import Messages from './components/Messages';
 import Header from './components/Header';
 
-const app = require('firebase/app');
+const app = require('../node_modules/firebase/app');
 require('firebase/auth');
 require('firebase/firestore');
 
@@ -33,11 +33,21 @@ function Main({ location }) {
   const [userType, setUserType] = useState('borrower');
 
   console.log("Testing Database:");
-  var docRef = db.collection('borrowers').doc('i1ovtR7AgIjBtsYgHU8M');
-  docRef.get().then(function (doc) {
-    console.log(doc.data());
-  })
-  // console.log(db.collection('lenders'));
+  var dbRef = db.collection('borrowers');
+  dbRef.doc("dude0").set({
+    contact: "mail@gmail.com",
+    industry: ["tech"],
+    loanAmount: {
+      amount: 5000,
+      currency: "USD"
+    },
+    orgName: "Facebook",
+    region: "Canada" });
+  // db.collection('borrowers').get().then(function (data) {
+  //   data.forEach(function(doc) {
+  //       console.log(doc.id, " => ", doc.data());
+  //   });
+  // })
 
   return (
     <div>
