@@ -18,8 +18,9 @@ class Dashboard extends Component {
     this.handlePageChange = this.handlePageChange.bind(this);
   }
 
-  handlePageChange() {
-
+  handlePageChange(e) {
+    this.props.setVisit(true);
+    this.props.setSelectedUser(e.target.id);
   }
 
   render() {
