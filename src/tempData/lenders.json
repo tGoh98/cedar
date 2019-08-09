@@ -1,28 +1,32 @@
 {
     "data": [
         {
-            "userId": "bill",
-            "avatar": "gates.jpg",
-            "name": "Bill Gates",
-            "orgName": "Microsoft",
+            "userId": "mark",
+            "avatar": "brady.jpg",
+            "name": "Tom Brady",
+            "orgName": "Patriots",
             "region": "USA",
-            "about": "Hi I'm Bill.",
-            "orgAbout": "$$",
+            "about": "Hey there! I'm Mark, an aspiring computer programmer. Feel free to shoot me a message to learn more about what Facebook does!",
+            "orgAbout": "Facebook is a company dedicated to giving people the power to build community and bring the world closer together. We were founded 15 years ago and have been growing at a tremendous rate ever since.",
             "network": [
-                "mark"
-            ]
+                "bill"
+            ],
+            "seeking": "$1,000 to $5,000 with 1% interest",
+            "tags": "football, new england"
         },
         {
             "userId": "greenback",
-            "avatar": "kiva.jpg",
+            "avatar": "sarah.jpg",
             "name": "Sarah Ziegenfuss",
-            "orgName": "Kiva",
+            "orgName": "C1",
             "region": "USA",
             "about": "Hi I'm Sarah, one of the executives at Kiva. Feel free to shoot me a message about what Kiva can do to help you.",
             "orgAbout": "Kiva is a nonprofit focused on providing microloans to help underserved communities thrive. Since being founded in 2005, Kiva has funded almost $1.33B in microloans.",
             "network": [
                 "greenback"
-            ]
+            ],
+            "seeking": "$3,000 with 3% interest",
+            "tags": "banking, fintech"
         },
         {
             "userId": "steverogers",
@@ -34,43 +38,51 @@
             "orgAbout": "HYDRA is a nonprofit focused on providing microloans to aspiring technology and science based startups. Since being founded, HYDRA has funded groundbreaking research throughout history.",
             "network": [
                 "wildrydes"
-            ]
+            ],
+            "seeking": "$600 with 11% interest",
+            "tags": "darknet, military"
         },
         {
-            "userId": "grameen",
-            "avatar": "grameen.png",
-            "name": "Muhammed Yunus",
-            "orgName": "Grameen America",
-            "region": "Bangladesh",
-            "about": "Hi I'm Muhammed, a social enterpreneur and banker. I founded Grameen Bank and Grameen America.",
-            "orgAbout": "Grameen America gives women in poverty financial education and guidance with the goal of establishing credit. Women in the program also receive a $1,500 microloan to start a business. ",
-            "network": [
-                "herlinda"
-            ]
-        },
-        {
-            "userId": "lender1",
-            "avatar": "avatar.png",
-            "name": "Sarah Ziegenfuss",
-            "orgName": "Kiva",
+            "userId": "greenback",
+            "name": "Uncle Sam",
+            "avatar": "sam.png",
+            "orgName": "Greenback",
             "region": "USA",
-            "about": "Hi I'm Sarah, one of the executives at Kiva. Feel free to shoot me a message about what Kiva can do to help you.",
-            "orgAbout": "Kiva is a nonprofit focused on providing microloans to help underserved communities thrive. Since being founded in 2005, Kiva has funded almost $1.33B in microloans.",
+            "about": "I'm Uncle Sam, an banker and an aspiring enterpreneur.",
+            "orgAbout": "Greenback is a financial technology application that offers tax-evasion services.",
             "network": [
-                "greenback"
-            ]
+                "kiva"
+            ],
+            "seeking": "Less than $5,000 with 3% interest",
+            "tags": "america, finance"
         },
         {
-            "userId": "lender2",
-            "name": "Steve Rogers",
-            "avatar": "avatar.png",
-            "orgName": "HYDRA",
-            "region": "Germany",
-            "about": "I'm Steve, an established venture capitalist.",
-            "orgAbout": "HYDRA is a nonprofit focused on providing microloans to aspiring technology and science based startups. Since being founded, HYDRA has funded groundbreaking research throughout history.",
+            "userId": "herlinda",
+            "name": "Herlinda",
+            "avatar": "caffeine.jpg",
+            "orgName": "Herlinda",
+            "region": "Brazil",
+            "about": "Hi I'm Herlinda, a farmer from Brazil.",
+            "orgAbout": "I had a low credit score, but now have a job and want to get a loan to buy my family a home.",
             "network": [
-                "wildrydes"
-            ]
+                "grameen"
+            ],
+            "seeking": "$200 with 1-3% interest",
+            "tags": "coffee, cow, spanish"
+        },
+        {
+          "userId": "wildrydes",
+          "avatar": "bezos.png",
+          "name": "Jeff Bezos",
+          "orgName": "Amazon",
+          "region": "Brazil",
+          "about": "Hi I'm Jeff, an aspiring computer programmer. I'm looking for a microloan to fund my startup.",
+          "orgAbout": "Wild Rydes is an app that offers peer-to-peer ridesharing on unicorns.",
+          "network": [
+            "steverogers"
+          ],
+          "seeking": "$6,000+ with 2% interest",
+          "tags": "tech, fantasy, startup"
         }
     ]
 }

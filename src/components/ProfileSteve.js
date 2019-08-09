@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { CardColumns, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import profilePic from '../images/zuck.jpg';
+import profilePic from '../images/steve.jpg';
 import gates from '../images/gates.jpg';
 import '../stylesheets/Profile.css';
 import Footer from './Footer';
@@ -48,18 +48,19 @@ class Profile extends Component {
             </div>
             <div className="col-9 profile-head-text">
               <h3>
-                Mark Zuckerburg
+                Steve Rodgers
                 {!this.props.visit &&
-                  <button type="button" style={{ float: 'right' }} className="btn btn-info btn-sm">Edit Profile</button>}
+                  <button type="button" style={{ float: 'right' }} className="btn btn-info btn-sm">Message Steve</button>}
               </h3>
-              <p className="text-muted">Facebook, Inc. | USA</p>
-              <p>Hey there! I'm Mark, an aspiring computer programmer. Feel free to shoot me a message to learn more about what Facebook does!</p>
+              <p className="text-muted">HYDRA | Global</p>
+              <p>Hi buddy, the name's Steve Rogers. I work with HYDRA to recover sacred artifacts like the Tesseract. Hail HYDRA!</p>
             </div>
           </div>
           <br />
           <div className="row row-profile">
-            <h4>What is Facebook about?</h4>
-            <p>Facebook is a company dedicated to giving people the power to build community and bring the world closer together. We were founded 15 years ago and have been growing at a tremendous rate ever since.</p>
+            <h4>What is HYDRA about?</h4>
+            <p style={{color: 'white'}}>_____________________________________________________________________________________________________________________</p>
+            <p style={{textDecoration: 'line-through'}}>[Redacted]</p>
           </div>
           <br />
           <div className="row row-profile">
