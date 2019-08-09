@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../stylesheets/SignUp.css'
 import avatarPlace from '../images/avatar.png';
+import Footer from './Footer';
 
 function loadCountries(countryData) {
     var countries = new Set();
@@ -141,6 +142,7 @@ class SignUp extends Component {
         }
 
         return (
+          <div>
             <div className="container">
                 <div className="row over-form-row">
 
@@ -203,6 +205,7 @@ class SignUp extends Component {
                         </div>
                     </form>
                 </div>
+              <Footer />
             </div>
         );
     }
