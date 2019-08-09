@@ -39,9 +39,9 @@ class Dashboard extends Component {
                 <small className="title-country" style={{ "opacity": 0.5 }}>{b.region}</small>
               </h5>
               <p className="p-2 card-text text-muted">
-                $1,000 to $5,000 with 1% interest
+                {b.seeking}
               </p>
-              <small className="p-2 card-text text-muted" style={{ "opacity": 0.5 }}>Technology, Startups, America</small>
+              <small className="p-2 card-text text-muted" style={{ "opacity": 0.5 }}>{b.tags}</small>
               <button type="button" className="btn btn-info btn-view-prof" onClick={this.handlePageChange}><Link to='/profile' style={{ textDecoration: 'none', color: 'white' }}>View Profile</Link></button>
             </div>
           </div>
