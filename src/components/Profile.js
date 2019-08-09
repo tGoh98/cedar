@@ -14,7 +14,7 @@ class Profile extends Component {
               </div>
               <div className="col-9">
                 <h3>Mark Zuckerburg<button type="button" style={{float: 'right'}} className="btn btn-primary btn-sm">Edit Profile</button></h3>
-                <p>Facebook, Inc. | USA</p>
+                <p class="text-muted">Facebook, Inc. | USA</p>
                 <p>Hey there! I'm Mark, an aspiring computer programmer. Feel free to shoot me a message to learn more about what Facebook does!</p>
               </div>
             </div>
