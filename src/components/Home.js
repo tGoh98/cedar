@@ -19,7 +19,7 @@ class Home extends Component {
         <div className="container content">
           <div className="row row-home">
             <h3>What does Cedar do?</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Cedar is a social networking web application that connects borrowers and lenders from around the globe. By matching borrowers with potential investors in a transparent and easily accessible way, Cedar optimizes the peer-to-peer marketplace within the world of microloaning. Furthermore, chatbot integration and machine learning allow Cedar to interact with the unbanked in a manner previously unheard of. With roots in regions across the Earth, Cedar is revolutionizing the field of microloan networking.</p>
           </div>
           <br />
           <div className="row row-home">
