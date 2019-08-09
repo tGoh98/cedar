@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { CardColumns, Card } from 'react-bootstrap';
 import profilePic from '../images/zuck.jpg';
 import gates from '../images/gates.jpg';
-import './Profile.css';
+import '../stylesheets/Profile.css';
 
 class Profile extends Component {
     render() {
