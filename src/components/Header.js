@@ -53,12 +53,12 @@ class Header extends Component {
             ))}
           </Nav>
           { !this.state.isLoggedIn ? (
-            <button type="button" className="btn btn-info" onClick={this.handleShow}>Login</button>
+            <button type="button" className="btn btn-info" onClick={this.handleSubmit}><Link className="navLinks" style={{color: 'white'}} to='/profile'>Login</Link></button>
           ) : (
             <p>Hello, {this.props.user} | <a className="signOut" onClick={this.handleSignOut}><Link className="navLinks" style={{color: 'blue'}} to='/'>Sign Out</Link></a></p>
           )}
         </Navbar>
-        <Modal show={this.state.show} onHide={this.handleClose}>
+        {/*<Modal show={this.state.show} onHide={this.handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Login to Cedar</Modal.Title>
         </Modal.Header>
@@ -74,7 +74,7 @@ class Header extends Component {
             Submit
           </Link></Button>
         </Modal.Footer>
-      </Modal>
+      </Modal>*/}
       </div>
     );
   }
