@@ -24,26 +24,28 @@ const db = app.firestore();
 
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, response) => {
   const agent = new WebhookClient({ request, response });
-  var data = {};
-  
-  function addNameDb (agent) {
-      data['name'] = agent.parameters.firstName + " " + agent.parameters.lastName;
-  }
-  function addContactDb (agent) {
-      data['contact'] = agent.parameters.email;
-  }
-  function addRegionDb (agent) {
-      data['region'] = agent.parameters.country;
-  }
-  function addIndustryDb (agent) {
-      data['industry'] = agent.parameters.industry;
-  }
-  function addOrgDb (agent) {
-      data['orgName'] = agent.parameters.orgName;
-  }
     
-  function addLoanDb (agent) {
-      data['loanAmount'] = agent.parameters.loanAmount;
+  function addToDb (agent) {
+      var data = {};
+      var context = response['outputContexts'];
+      agent.add(context);
+      for (i = 0; i < context.length; i++) {
+          if context[i].includes('/cedarprofilecreate-followup') {
+              data['name'] = context[i]['parameters']['firstName'] + " " + context[i]['parameters']['lastName'];
+              
+              data['region'] = context[i]['parameters']['country'];
+              
+              data['contact'] = context[i]['parameters']['email'];
+              
+              data['industry'] = context[i]['parameters']['industry'][0];
+              
+              data['orgName'] = context[i]['parameters']['orgName'];
+              
+              data['loanAmount'] = context[i]['parameters']['loanAmount'];
+              
+          }
+      }
+      
       db.collection('borrowers').add(data)
     .then(function() {
       console.log("Document successfully written!");
@@ -71,11 +73,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 
   // Map from Dialogflow intent names to functions to be run when the intent is matched
   let intentMap = new Map();
-  intentMap.set('cedar.profile.create.name', addNameDb);
-  intentMap.set('cedar.profile.create.contact', addContactDb);
-  intentMap.set('cedar.profile.create.region', addRegionDb); 
-  intentMap.set('cedar.profile.create.industry', addIndustryDb); intentMap.set('cedar.profile.create.org_name', addOrgDb);
-  intentMap.set('cedar.profile.create.loan_amount', addLoanDb);    
+  intentMap.set('cedar.profile.create.loan_amount', addToDb);    
   intentMap.set('ReadFromFirebase', readFromDb);
   agent.handleRequest(intentMap);
 });
