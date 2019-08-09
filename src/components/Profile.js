@@ -6,7 +6,7 @@ import gates from '../images/gates.jpg';
 import '../stylesheets/Profile.css';
 import Footer from './Footer';
 
-import lendData from '../tempData/lenders.json'
+import lendData from '../tempData/borrowers.json'
 
 class Profile extends Component {
   constructor(props) {

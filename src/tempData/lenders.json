@@ -2,9 +2,9 @@
     "data": [
         {
             "userId": "mark",
-            "avatar": "zuck.jpg",
-            "name": "Mark Zuck",
-            "orgName": "Facebook",
+            "avatar": "brady.jpg",
+            "name": "Tom Brady",
+            "orgName": "Patriots",
             "region": "USA",
             "about": "Hey there! I'm Mark, an aspiring computer programmer. Feel free to shoot me a message to learn more about what Facebook does!",
             "orgAbout": "Facebook is a company dedicated to giving people the power to build community and bring the world closer together. We were founded 15 years ago and have been growing at a tremendous rate ever since.",
@@ -12,7 +12,7 @@
                 "bill"
             ],
             "seeking": "$1,000 to $5,000 with 1% interest",
-            "tags": "tech, social network, startup"
+            "tags": "football, new england"
         },
         {
             "userId": "greenback",
