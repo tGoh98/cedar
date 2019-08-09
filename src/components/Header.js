@@ -60,9 +60,7 @@ class Header extends Component {
           </Nav>
           <button type="button" className="btn btn-outline-info btn-switch" onClick={this.handleSwitch}>Switch Modes</button>
           {!this.state.isLoggedIn ? (
-            <button type="button" className="btn btn-info" onClick={this.handleShow}>Login</button>
-          { !this.state.isLoggedIn ? (
-            <button type="button" className="btn btn-info" onClick={this.handleSubmit}><Link className="navLinks" style={{color: 'white'}} to='/profile'>Login</Link></button>
+            <button type="button" className="btn btn-info" onClick={this.handleSubmit}><Link className="navLinks" style={{ color: 'white' }} to='/profile'>Login</Link></button>
           ) : (
               <p>Hello, {this.props.user} | <a className="signOut" onClick={this.handleSignOut}><Link className="navLinks" style={{ color: 'blue' }} to='/'>Sign Out</Link></a></p>
             )}
