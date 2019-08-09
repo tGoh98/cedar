@@ -9,8 +9,7 @@ const routes = [
   { path: '/chatbot' },
   { path: '/signup' },
   { path: '/profile' },
-  { path: '/dashboard' },
-  { path: '/messages' }
+  { path: '/dashboard' }
 ]
 
 class Header extends Component {

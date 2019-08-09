@@ -8,7 +8,6 @@ import Chatbot from './components/Chatbot';
 import SignUp from './components/SignUp';
 import Profile from './components/Profile';
 import Dashboard from './components/Dashboard';
-import Messages from './components/Messages';
 import Header from './components/Header';
 
 const app = require('../node_modules/firebase/app');
@@ -83,7 +82,6 @@ function Main({ location }) {
               <Route exact path='/signup' render={(props) => <SignUp user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} />}></Route>
               <Route exact path='/profile' render={(props) => <Profile user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} visit={visit} setVisit={setVisit} />}></Route>
               <Route exact path='/dashboard' render={(props) => <Dashboard user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} visit={visit} setVisit={setVisit} />}></Route>
-              <Route exact path='/messages' render={(props) => <Messages user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} />}></Route>
             </Switch>
           </section>
         </CSSTransition>
