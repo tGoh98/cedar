@@ -1,20 +1,20 @@
 'use strict';
-const app = require('firebase/app');
-require('firebase/auth');
-require('firebase/firestore');
+const app = require('firebase/app'); //
+require('firebase/auth'); //
+require('firebase/firestore'); //
 
 const functions = require('firebase-functions');
 // const admin = require('firebase-admin');
-const {WebhookClient} = require('dialogflow-fulfillment');
-const {Card, Suggestion} = require('dialogflow-fulfillment');
+const { WebhookClient } = require('dialogflow-fulfillment');
+const { Card, Suggestion } = require('dialogflow-fulfillment');
 
-const firebaseConfig = {
-    apiKey: "AIzaSyCcOvnTMYAJFBdZuzQawx8Z7tCgCXfylCo",
-    authDomain: "crollo-xxoykw.firebaseapp.com",
-    databaseURL: "https://crollo-xxoykw.firebaseio.com/",
-    projectId: "crollo-xxoykw",
-    storageBucket: "",
-    appId:"1:716632137718:web:75ba185462453105"
+const firebaseConfig = { //
+  apiKey: "AIzaSyCcOvnTMYAJFBdZuzQawx8Z7tCgCXfylCo",
+  authDomain: "crollo-xxoykw.firebaseapp.com",
+  databaseURL: "https://crollo-xxoykw.firebaseio.com/",
+  projectId: "crollo-xxoykw",
+  storageBucket: "",
+  appId: "1:716632137718:web:75ba185462453105"
 };
 
 process.env.DEBUG = 'dialogflow:*'; // enables lib debugging statements
@@ -28,8 +28,9 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     
   function addToDb (agent) {
       var json = request.body;
-      for (var context in json.outputContexts) {
-          if (context.name.includes('/cedarprofilecreate-followup')) {
+      json.outputContexts.forEach(function(context, index) {
+          agent.add(context.name);
+          if (JSON.stringify(context.name).includes('cedarprofilecreate-followup')) {
               data['name'] = context.parameters.firstName + " " + context.parameters.lastName;
               
               data['region'] = context.parameters.country;
@@ -43,7 +44,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
               data['loanAmount'] = context.parameters.loanAmount.amount;
               
           }
-      }
+      });
       //agent.add(data['region']);
       db.collection('borrowers').add(data);
   }

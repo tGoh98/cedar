@@ -1,0 +1,76 @@
+{
+    "data": [
+        {
+            "userId": "bill",
+            "avatar": "gates.jpg",
+            "name": "Bill Gates",
+            "orgName": "Microsoft",
+            "region": "USA",
+            "about": "Hi I'm Bill.",
+            "orgAbout": "$$",
+            "network": [
+                "mark"
+            ]
+        },
+        {
+            "userId": "greenback",
+            "avatar": "kiva.jpg",
+            "name": "Sarah Ziegenfuss",
+            "orgName": "Kiva",
+            "region": "USA",
+            "about": "Hi I'm Sarah, one of the executives at Kiva. Feel free to shoot me a message about what Kiva can do to help you.",
+            "orgAbout": "Kiva is a nonprofit focused on providing microloans to help underserved communities thrive. Since being founded in 2005, Kiva has funded almost $1.33B in microloans.",
+            "network": [
+                "greenback"
+            ]
+        },
+        {
+            "userId": "steverogers",
+            "name": "Steve Rogers",
+            "avatar": "steve.jpg",
+            "orgName": "HYDRA",
+            "region": "Germany",
+            "about": "I'm Steve, an established venture capitalist.",
+            "orgAbout": "HYDRA is a nonprofit focused on providing microloans to aspiring technology and science based startups. Since being founded, HYDRA has funded groundbreaking research throughout history.",
+            "network": [
+                "wildrydes"
+            ]
+        },
+        {
+            "userId": "grameen",
+            "avatar": "grameen.png",
+            "name": "Muhammed Yunus",
+            "orgName": "Grameen America",
+            "region": "Bangladesh",
+            "about": "Hi I'm Muhammed, a social enterpreneur and banker. I founded Grameen Bank and Grameen America.",
+            "orgAbout": "Grameen America gives women in poverty financial education and guidance with the goal of establishing credit. Women in the program also receive a $1,500 microloan to start a business. ",
+            "network": [
+                "herlinda"
+            ]
+        },
+        {
+            "userId": "lender1",
+            "avatar": "avatar.png",
+            "name": "Sarah Ziegenfuss",
+            "orgName": "Kiva",
+            "region": "USA",
+            "about": "Hi I'm Sarah, one of the executives at Kiva. Feel free to shoot me a message about what Kiva can do to help you.",
+            "orgAbout": "Kiva is a nonprofit focused on providing microloans to help underserved communities thrive. Since being founded in 2005, Kiva has funded almost $1.33B in microloans.",
+            "network": [
+                "greenback"
+            ]
+        },
+        {
+            "userId": "lender2",
+            "name": "Steve Rogers",
+            "avatar": "avatar.png",
+            "orgName": "HYDRA",
+            "region": "Germany",
+            "about": "I'm Steve, an established venture capitalist.",
+            "orgAbout": "HYDRA is a nonprofit focused on providing microloans to aspiring technology and science based startups. Since being founded, HYDRA has funded groundbreaking research throughout history.",
+            "network": [
+                "wildrydes"
+            ]
+        }
+    ]
+}

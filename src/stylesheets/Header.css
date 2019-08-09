@@ -1,0 +1,19 @@
+.navLinks {
+  text-decoration: none;
+  color: grey;
+}
+
+.navLinks:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.signOut {
+  color: blue !important;
+}
+
+.signOut:hover {
+  text-decoration: underline !important;
+  color: blue !important;
+  cursor: pointer;
+}
