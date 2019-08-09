@@ -38,7 +38,7 @@
         },
         {
             "userId": "wildrydes",
-            "avatar": "unicorn.jpeg",
+            "avatar": "avatar.png",
             "name": "Jeff Bezos",
             "orgName": "Wild Rydes",
             "region": "Fantasia",
@@ -51,7 +51,7 @@
         {
             "userId": "greenback",
             "name": "Uncle Sam",
-            "avatar": "sam.png",
+            "avatar": "avatar.png",
             "orgName": "Greenback",
             "region": "USA",
             "about": "I'm Uncle Sam, an banker and an aspiring enterpreneur.",
@@ -63,7 +63,7 @@
         {
             "userId": "herlinda",
             "name": "Herlinda",
-            "avatar": "caffeine.jpg",
+            "avatar": "avatar.png",
             "orgName": "Herlinda",
             "region": "Brazil",
             "about": "Hi I'm Herlinda, a farmer from Brazil.",
