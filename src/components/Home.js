@@ -20,12 +20,12 @@ class Home extends Component {
                 <div className="sign-up-opt row">
                   <div className="start-borrow col" style={{borderRightWidth: 1, borderRightStyle: 'solid', borderRightColor: 'black'}}>
                     <h4>Looking to apply for a loan?</h4>
-                    <p>Chat with Juniper, our interative bot, to create a profile and find compatible lenders.</p>
+                    <p>Chat with our interative bot, Juniper, to create a profile and find compatible lenders.</p>
                     <button type="button" className="btn btn-info"><Link to='/chatbot' style={{textDecoration: 'none', color: 'white'}}>Start borrowing</Link></button>
                   </div>
                   <div className="start-lend col">
                     <h4>Looking to lend to others?</h4>
-                    <p>Tell us what businesses you're interested in and we'll match you with suitable prospects.</p>
+                    <p>Tell us about the businesses you're interested in and we'll match you with suitable prospects.</p>
                     <button type="button" className="btn btn-info"><Link to='/signup' style={{textDecoration: 'none', color: 'white'}}>Start investing</Link></button>
                   </div>
                 </div>
