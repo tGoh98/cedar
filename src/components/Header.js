@@ -5,26 +5,26 @@ import { Navbar, Nav } from 'react-bootstrap';
 import '../stylesheets/Header.css';
 
 const routes = [
-  { path: '/'},
-  { path: '/chatbot'},
-  { path: '/signup'},
+  { path: '/' },
+  { path: '/chatbot' },
+  { path: '/signup' },
   { path: '/profile' },
-  { path: '/dashboard'},
-  { path: '/messages'}
+  { path: '/dashboard' },
+  { path: '/messages' }
 ]
 
 class Header extends Component {
-  render () {
+  render() {
     return (
       <div>
         <Navbar fixed="top" bg="light" variant="light">
           <Navbar.Brand>Cedar</Navbar.Brand>
           <Nav className="mr-auto">
             {routes.map(({ path }) => (
-              <Nav.Link key={ path }><Link className="navLinks" to={path}>{path}</Link></Nav.Link>
+              <Nav.Link key={path}><Link className="navLinks" to={path}>{path}</Link></Nav.Link>
             ))}
           </Nav>
-          <button type="button" className="btn btn-success"><Link to='/signup' style={{textDecoration: 'none', color: 'white'}}>Login</Link></button>
+          <button type="button" className="btn btn-info"><Link to='/signup' style={{ textDecoration: 'none', color: 'white' }}>Login</Link></button>
         </Navbar>
       </div>
     );
