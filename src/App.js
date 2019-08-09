@@ -39,6 +39,7 @@ function Main({ location }) {
           </section>
         </CSSTransition>
       </TransitionGroup>
+
     </div>
   );
 }
