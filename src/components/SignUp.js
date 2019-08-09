@@ -145,7 +145,6 @@ class SignUp extends Component {
           <div>
             <div className="container">
                 <div className="row over-form-row">
-
                     <form className="form">
                         <div className="form-group d-flex justify-content-center avatar-row">
                             <img className="avatar-img" src={avatarPlace} />
@@ -206,6 +205,7 @@ class SignUp extends Component {
                     </form>
                 </div>
               <Footer />
+            </div>
             </div>
         );
     }
