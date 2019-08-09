@@ -27,10 +27,11 @@ app.initializeApp(firebaseConfig);
 const db = app.firestore();
 
 function Main({ location }) {
-  const [user, setUser] = useState('mark');
+  const [user, setUser] = useState('Tim');
   const [selectedUser, setSelectedUser] = useState('bill');
   const [visit, setVisit] = useState(false);
   const [userType, setUserType] = useState('borrower');
+  const [showModes, setShowModes] = useState(false);
 
   console.log("Testing Database:");
   var dbRef = db.collection('borrowers');
@@ -68,7 +69,7 @@ function Main({ location }) {
 
   return (
     <div>
-      <Header user={user} userType={userType} setUserType={setUserType} visit={visit} setVisit={setVisit} />
+      <Header user={user} userType={userType} setUserType={setUserType} visit={visit} setVisit={setVisit} showModes={showModes} setShowModes={setShowModes} />
       <TransitionGroup className="transition-group">
         <CSSTransition
           key={location.key}
@@ -81,7 +82,7 @@ function Main({ location }) {
               <Route exact path='/chatbot' render={(props) => <Chatbot user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} />}></Route>
               <Route exact path='/signup' render={(props) => <SignUp user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} />}></Route>
               <Route exact path='/profile' render={(props) => <Profile user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} visit={visit} setVisit={setVisit} />}></Route>
-              <Route exact path='/dashboard' render={(props) => <Dashboard user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} visit={visit} setVisit={setVisit} />}></Route>
+              <Route exact path='/dashboard' render={(props) => <Dashboard user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} visit={visit} setVisit={setVisit} showModes={showModes} setShowModes={setShowModes} />}></Route>
             </Switch>
           </section>
         </CSSTransition>

@@ -68,7 +68,7 @@ class Dashboard extends Component {
                 {l.seeking}
             </p>
               <small className="p-2 card-text text-muted" style={{ "opacity": 0.5 }}>{l.tags}</small>
-              <button type="button" className="btn btn-info btn-view-prof"><Link to='/profile' style={{ textDecoration: 'none', color: 'white' }}>View Profile</Link></button>
+              <button type="button" className="btn btn-info btn-view-prof"><Link to='/profile' style={{ textDecoration: 'none', color: 'white' }} onClick={()=>this.props.setShowModes(false)}>View Profile</Link></button>
             </div>
           </div>
         </div>

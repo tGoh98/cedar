@@ -12,7 +12,7 @@ const routes = [
 class Header extends Component {
   constructor(props) {
     super(props);
-    this.state = { isLoggedIn: false, show: false, showNavs: false, showModes: false };
+    this.state = { isLoggedIn: false, show: false, showNavs: false };
 
     this.handleSwitch = this.handleSwitch.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -55,7 +55,7 @@ class Header extends Component {
               <Nav className="mr-auto">
                 <Nav.Link><Link className="navLinks" to='/'>Home</Link></Nav.Link>
                 <Nav.Link><Link className="navLinks" to='/profile'>My Profile</Link></Nav.Link>
-                <Nav.Link><Link className="navLinks" to='/dashboard'>Dashboard</Link></Nav.Link>
+                <Nav.Link><Link className="navLinks" to='/dashboard' onClick={()=>this.props.setShowModes(true)}>Dashboard</Link></Nav.Link>
               </Nav>
             ) : (
               <Nav className="mr-auto">
@@ -63,11 +63,13 @@ class Header extends Component {
               </Nav>
             )
           }
-          <button type="button" className="btn btn-outline-info btn-switch" onClick={this.handleSwitch}>Switch Modes</button>
+          { this.props.showModes &&
+            <button type="button" className="btn btn-outline-info btn-switch" onClick={this.handleSwitch} style={{marginRight: 10}}>Switch Modes</button>
+          }
           {!this.state.isLoggedIn ? (
             <button type="button" className="btn btn-info" onClick={this.handleSubmit}><Link className="navLinks" style={{ color: 'white' }} to='/profile'>Login</Link></button>
           ) : (
-              <p>Hello, {this.props.user} | <a className="signOut" onClick={this.handleSignOut}><Link className="navLinks" style={{ color: 'blue' }} to='/'>Sign Out</Link></a></p>
+              <p style={{marginTop: 13}}>Hello, {this.props.user} | <a className="signOut" onClick={this.handleSignOut}><Link className="navLinks" style={{ color: 'blue' }} to='/'>Sign Out</Link></a></p>
             )}
         </Navbar>
         {/*<Modal show={this.state.show} onHide={this.handleClose}>
