@@ -23,12 +23,12 @@ class Home extends Component {
                 </div>
                 <br />
                 <div className="row row-home">
-                  <div className="start-borrow col" style={{borderRightWidth: 1, borderRightStyle: 'solid', borderRightColor: 'black'}}>
+                  <div className="start-borrow col sign-up-opt" style={{borderRightWidth: 1, borderRightStyle: 'solid', borderRightColor: 'black'}}>
                     <h4>Looking to apply for a loan?</h4>
                     <p>Chat with our interative bot, Juniper, to create a profile and find compatible lenders.</p>
                     <button type="button" className="btn btn-info"><Link to='/chatbot' style={{textDecoration: 'none', color: 'white'}}>Start borrowing</Link></button>
                   </div>
-                  <div className="start-lend col">
+                  <div className="start-lend col sign-up-opt">
                     <h4>Looking to lend to others?</h4>
                     <p>Tell us about the businesses you're interested in and we'll match you with suitable prospects.</p>
                     <button type="button" className="btn btn-info"><Link to='/signup' style={{textDecoration: 'none', color: 'white'}}>Start investing</Link></button>
