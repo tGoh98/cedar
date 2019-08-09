@@ -53,7 +53,9 @@ class Dashboard extends Component {
     return (
       <div>
         <div className="container">
-          <h3>Organizations For You</h3>
+          <div className="row title-row">
+            <h3>Organizations For You</h3>
+          </div>
           <div className="form-row">
             <div className="form-group col-6">
               <label for="searchTerm">Search term:</label>
@@ -77,7 +79,7 @@ class Dashboard extends Component {
               </select>
             </div>
           </div>
-          <div className="row">
+          <div className="row card-row">
             {borrowDisp}
             {loanDisp}
           </div>
