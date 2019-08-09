@@ -3,6 +3,22 @@ import '../stylesheets/SignUp.css'
 import avatarPlace from '../images/avatar.png';
 import Footer from './Footer';
 
+// const app = require('firebase/app');
+// require('firebase/auth');
+// require('firebase/firestore');
+
+// const firebaseConfig = {
+//     apiKey: "AIzaSyCcOvnTMYAJFBdZuzQawx8Z7tCgCXfylCo",
+//     authDomain: "crollo-xxoykw.firebaseapp.com",
+//     databaseURL: "https://crollo-xxoykw.firebaseio.com/",
+//     projectId: "crollo-xxoykw",
+//     storageBucket: "",
+//     appId: "1:716632137718:web:75ba185462453105"
+// };
+
+// app.initializeApp(firebaseConfig);
+// const db = app.firestore();
+
 function loadCountries(countryData) {
     var countries = new Set();
     countryData.forEach((s) => {
@@ -111,6 +127,9 @@ class SignUp extends Component {
     }
 
     onSubmit(e) {
+
+        //var dataSubmit = true;
+
         console.log("Submit button clicked");
         console.log("Name: " + this.state.name);
         console.log("OrgName: " + this.state.orgName)
@@ -125,6 +144,23 @@ class SignUp extends Component {
         this.setState({
             submitted: true
         });
+
+        // if (!dataSubmit) {
+        //     console.log("Writing to Database:");
+        //     const borrow = db.collection('borrowers');
+        //     let setJane = borrow.doc(this.state.contact.email).set({
+        //         name: this.state.name,
+        //         region: this.state.region,
+        //         orgName: this.state.orgName,
+        //         industry: this.state.industry,
+        //         info: this.state.info,
+        //         contact: {
+        //             email: this.state.contact.email,
+        //             phone: "999-000-1234"
+        //         },
+        //         tags: ["tech", "education", "app"]
+        //     });
+        // }
     }
 
     render() {

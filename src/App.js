@@ -39,6 +39,22 @@ function Main({ location }) {
   })
   // console.log(db.collection('lenders'));
 
+  // console.log("Writing to Database:");
+  // const borrow = db.collection('borrowers');
+  // let setJane = borrow.doc('JaneDoe').set({
+  //   name: 'Jane Doe',
+  //   region: 'USA',
+  //   orgName: 'Greenback',
+  //   industry: ['tech'],
+  //   info: "I want to make a budgeting app specifically geared towards the agricultural community.",
+  //   contact: {
+  //     email: "janedoe@greenback.com",
+  //     phone: "408-666-9999",
+  //     website: "janedoe.github.io/greenback"
+  //   },
+  //   tags: ["tech", "finance", "startup"]
+  // });
+
   return (
     <div>
       <Header user={user} />
