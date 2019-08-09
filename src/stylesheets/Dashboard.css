@@ -1,0 +1,38 @@
+/* .row {
+    box-shadow: none;
+    padding: 1rem;
+} */
+
+.card-org {
+    box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+    margin-bottom: 2rem;
+}
+
+.btn-view-prof {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0px 0px .25rem .25rem;
+}
+
+.card-img-top {
+    object-fit: cover;
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+}
+
+.title-country {
+    margin-left: 0.5rem;
+    font-size: medium;
+}
+
+.card-body {
+    height: 200px;
+}
+
+.borrow-loan {
+    color: #17a2b8;
+    padding: .5rem;
+}
