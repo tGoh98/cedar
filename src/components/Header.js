@@ -5,9 +5,6 @@ import { Navbar, Nav, Modal, Button } from 'react-bootstrap';
 import '../stylesheets/Header.css';
 
 const routes = [
-  { path: '/' },
-  { path: '/chatbot' },
-  { path: '/signup' },
   { path: '/profile' },
   { path: '/dashboard' }
 ]
@@ -15,7 +12,7 @@ const routes = [
 class Header extends Component {
   constructor(props) {
     super(props);
-    this.state = { isLoggedIn: false, show: false };
+    this.state = { isLoggedIn: false, show: false, showNavs: false, showModes: false };
 
     this.handleSwitch = this.handleSwitch.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -40,23 +37,32 @@ class Header extends Component {
   handleSignOut() {
     this.setState({ show: false });
     this.setState({ isLoggedIn: false });
+    this.setState({ showNavs: false });
   }
 
   handleSubmit() {
     this.setState({ show: false });
     this.setState({ isLoggedIn: true });
+    this.setState({ showNavs: true });
   }
 
   render() {
     return (
       <div>
         <Navbar fixed="top" bg="light" variant="light">
-          <Navbar.Brand>Cedar</Navbar.Brand>
-          <Nav className="mr-auto">
-            {routes.map(({ path }) => (
-              <Nav.Link key={path}><Link className="navLinks" to={path}>{path}</Link></Nav.Link>
-            ))}
-          </Nav>
+          <Navbar.Brand><Link className="navLinks" to='/'>Cedar</Link></Navbar.Brand>
+          { this.state.showNavs ? (
+              <Nav className="mr-auto">
+                <Nav.Link><Link className="navLinks" to='/'>Home</Link></Nav.Link>
+                <Nav.Link><Link className="navLinks" to='/profile'>My Profile</Link></Nav.Link>
+                <Nav.Link><Link className="navLinks" to='/dashboard'>Dashboard</Link></Nav.Link>
+              </Nav>
+            ) : (
+              <Nav className="mr-auto">
+                <Nav.Link><Link className="navLinks" to='/'>Home</Link></Nav.Link>
+              </Nav>
+            )
+          }
           <button type="button" className="btn btn-outline-info btn-switch" onClick={this.handleSwitch}>Switch Modes</button>
           {!this.state.isLoggedIn ? (
             <button type="button" className="btn btn-info" onClick={this.handleSubmit}><Link className="navLinks" style={{ color: 'white' }} to='/profile'>Login</Link></button>
