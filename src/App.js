@@ -7,6 +7,7 @@ import Home from './components/Home';
 import Chatbot from './components/Chatbot';
 import SignUp from './components/SignUp';
 import Profile from './components/Profile';
+import ProfileSteve from './components/ProfileSteve';
 import Dashboard from './components/Dashboard';
 import Header from './components/Header';
 
@@ -27,7 +28,7 @@ app.initializeApp(firebaseConfig);
 const db = app.firestore();
 
 function Main({ location }) {
-  const [user, setUser] = useState('Tim');
+  const [user, setUser] = useState('Mark');
   const [selectedUser, setSelectedUser] = useState('bill');
   const [visit, setVisit] = useState(false);
   const [userType, setUserType] = useState('borrower');
@@ -82,6 +83,7 @@ function Main({ location }) {
               <Route exact path='/chatbot' render={(props) => <Chatbot user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} />}></Route>
               <Route exact path='/signup' render={(props) => <SignUp user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} />}></Route>
               <Route exact path='/profile' render={(props) => <Profile user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} visit={visit} setVisit={setVisit} />}></Route>
+              <Route exact path='/profileSteve' render={(props) => <ProfileSteve user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} visit={visit} setVisit={setVisit} />}></Route>
               <Route exact path='/dashboard' render={(props) => <Dashboard user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} visit={visit} setVisit={setVisit} showModes={showModes} setShowModes={setShowModes} />}></Route>
             </Switch>
           </section>
