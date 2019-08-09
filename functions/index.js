@@ -19,52 +19,63 @@ const firebaseConfig = {
 
 process.env.DEBUG = 'dialogflow:*'; // enables lib debugging statements
 
-app.initializeApp(functions.config().firebase);
+app.initializeApp(firebaseConfig);
 const db = app.firestore();
 
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, response) => {
   const agent = new WebhookClient({ request, response });
-
-  function writeToDb (agent) {
-    // Get parameter from Dialogflow with the string to add to the database
-    const databaseEntry = agent.parameters.databaseEntry;
-
-    // Get the database collection 'dialogflow' and document 'agent' and store
-    // the document  {entry: "<value of database entry>"} in the 'agent' document
-    const dialogflowAgentRef = db.collection('dialogflow').doc('agent');
-    return db.runTransaction(t => {
-      t.set(dialogflowAgentRef, {entry: databaseEntry});
-      return Promise.resolve('Write complete');
-    }).then(doc => {
-      agent.add(`Wrote "${databaseEntry}" to the Firestore database.`);
-    }).catch(err => {
-      console.log(`Error writing to Firestore: ${err}`);
-      agent.add(`Failed to write "${databaseEntry}" to the Firestore database.`);
+  var data = {};
+  
+  function addNameDb (agent) {
+      data['name'] = agent.parameters.firstName + " " + agent.parameters.lastName;
+  }
+  function addContactDb (agent) {
+      data['contact'] = agent.parameters.email;
+  }
+  function addRegionDb (agent) {
+      data['region'] = agent.parameters.country;
+  }
+  function addIndustryDb (agent) {
+      data['industry'] = agent.parameters.industry;
+  }
+  function addOrgDb (agent) {
+      data['orgName'] = agent.parameters.orgName;
+  }
+    
+  function addLoanDb (agent) {
+      data['loanAmount'] = agent.parameters.loanAmount;
+      db.collection('borrowers').add(data)
+    .then(function() {
+      console.log("Document successfully written!");
+      agent.add("Thanks for creating a profile!");
+      data = {};
+    })
+    .catch(function(error) {
+      console.error("Error writing document: ", error);
     });
   }
-
+    
+  function editDb (agent) {
+      var name = agent.parameters.firstName + " " + agent.parameters.lastName;
+      var entry = db.collection('borrowers').where('name', '==', name).get()
+      .then(function(querySnapshot) {
+          querySnapshot.forEach(function(doc) {
+              console.log(doc.id, " => ", doc.data());
+              doc.update()
+          })
+      })
+  }
   function readFromDb (agent) {
-    // Get the database collection 'dialogflow' and document 'agent'
-    const dialogflowAgentDoc = db.collection('dialogflow').doc('agent');
-
-    // Get the value of 'entry' in the document and send it to the user
-    return dialogflowAgentDoc.get()
-      .then(doc => {
-        if (!doc.exists) {
-          agent.add('No data found in the database!');
-        } else {
-          agent.add(doc.data().entry);
-        }
-        return Promise.resolve('Read complete');
-      }).catch(() => {
-        agent.add('Error reading entry from the Firestore database.');
-        agent.add('Please add a entry to the database first by saying, "Write <your phrase> to the database"');
-      });
+    
   }
 
   // Map from Dialogflow intent names to functions to be run when the intent is matched
   let intentMap = new Map();
-  intentMap.set('ReadFromFirestore', readFromDb);
-  intentMap.set('WriteToFirestore', writeToDb);
+  intentMap.set('cedar.profile.create.name', addNameDb);
+  intentMap.set('cedar.profile.create.contact', addContactDb);
+  intentMap.set('cedar.profile.create.region', addRegionDb); 
+  intentMap.set('cedar.profile.create.industry', addIndustryDb); intentMap.set('cedar.profile.create.org_name', addOrgDb);
+  intentMap.set('cedar.profile.create.loan_amount', addLoanDb);    
+  intentMap.set('ReadFromFirebase', readFromDb);
   agent.handleRequest(intentMap);
 });
