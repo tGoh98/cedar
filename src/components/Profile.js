@@ -5,11 +5,13 @@ import gates from '../images/gates.jpg';
 import '../stylesheets/Profile.css';
 import Footer from './Footer';
 
+
 class Profile extends Component {
   constructor(props) {
     super(props);
   }
   render() {
+
     return (
       <div>
         <div className="container" style={{ paddingTop: 10 }}>
@@ -20,7 +22,8 @@ class Profile extends Component {
             <div className="col-9 profile-head-text">
               <h3>
                 Mark Zuckerburg
-                {<button type="button" style={{ float: 'right' }} className="btn btn-info btn-sm">Edit Profile</button>}
+                {!this.props.visit &&
+                  <button type="button" style={{ float: 'right' }} className="btn btn-info btn-sm">Edit Profile</button>}
               </h3>
               <p className="text-muted">Facebook, Inc. | USA</p>
               <p>Hey there! I'm Mark, an aspiring computer programmer. Feel free to shoot me a message to learn more about what Facebook does!</p>

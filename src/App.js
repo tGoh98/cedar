@@ -30,7 +30,7 @@ const db = app.firestore();
 function Main({ location }) {
   const [user, setUser] = useState('mark');
   const [selectedUser, setSelectedUser] = useState('bill');
-  const [visit, setVisit] = useState('false');
+  const [visit, setVisit] = useState(false);
   const [userType, setUserType] = useState('borrower');
 
   console.log("Testing Database:");
@@ -81,8 +81,8 @@ function Main({ location }) {
               <Route exact path='/' render={(props) => <Home user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} />}></Route>
               <Route exact path='/chatbot' render={(props) => <Chatbot user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} />}></Route>
               <Route exact path='/signup' render={(props) => <SignUp user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} />}></Route>
-              <Route exact path='/profile' render={(props) => <Profile user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} />}></Route>
-              <Route exact path='/dashboard' render={(props) => <Dashboard user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} />}></Route>
+              <Route exact path='/profile' render={(props) => <Profile user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} visit={visit} setVisit={setVisit} />}></Route>
+              <Route exact path='/dashboard' render={(props) => <Dashboard user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} visit={visit} setVisit={setVisit} />}></Route>
               <Route exact path='/messages' render={(props) => <Messages user={user} selectedUser={selectedUser} userType={userType} setUser={setUser} setSelectedUser={setSelectedUser} setUserType={setUserType} />}></Route>
             </Switch>
           </section>

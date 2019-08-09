@@ -18,8 +18,9 @@ class Dashboard extends Component {
     this.handlePageChange = this.handlePageChange.bind(this);
   }
 
-  handlePageChange() {
-
+  handlePageChange(e) {
+    this.props.setVisit(true);
+    this.props.setSelectedUser(e.target.id);
   }
 
   render() {
@@ -42,7 +43,7 @@ class Dashboard extends Component {
                 $1,000 to $5,000 with 1% interest
               </p>
               <small className="p-2 card-text text-muted" style={{ "opacity": 0.5 }}>Technology, Startups, America</small>
-              <button type="button" className="btn btn-info btn-view-prof" onClick={this.handlePageChange}><Link to='/profile' style={{ textDecoration: 'none', color: 'white' }}>View Profile</Link></button>
+              <button type="button" id={b.userId} className="btn btn-info btn-view-prof" onClick={this.handlePageChange}><Link to='/profile' style={{ textDecoration: 'none', color: 'white' }}>View Profile</Link></button>
             </div>
           </div>
         </div>
@@ -67,7 +68,7 @@ class Dashboard extends Component {
                 $1,000 to $5,000 with 1% interest
             </p>
               <small className="p-2 card-text text-muted" style={{ "opacity": 0.5 }}>Technology, Startups, America</small>
-              <button type="button" className="btn btn-info btn-view-prof">View Profile</button>
+              <button type="button" id={l.userId} className="btn btn-info btn-view-prof" onClick={this.handlePageChange}><Link to='/profile' style={{ textDecoration: 'none', color: 'white' }}>View Profile</Link></button>
             </div>
           </div>
         </div>
