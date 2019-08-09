@@ -1,15 +1,15 @@
 {
     "data": [
         {
-            "userId": "mark",
-            "avatar": "zuck.jpg",
-            "name": "Mark Zuck",
-            "orgName": "Facebook",
+            "userId": "bill",
+            "avatar": "gates.jpg",
+            "name": "Bill Gates",
+            "orgName": "Microsoft",
             "region": "USA",
-            "about": "Hey there! I'm Mark, an aspiring computer programmer. Feel free to shoot me a message to learn more about what Facebook does!",
-            "orgAbout": "Facebook is a company dedicated to giving people the power to build community and bring the world closer together. We were founded 15 years ago and have been growing at a tremendous rate ever since.",
+            "about": "Hi I'm Bill.",
+            "orgAbout": "$$",
             "network": [
-                "bill"
+                "mark"
             ],
             "seeking": "$1,000 to $5,000 with 1% interest",
             "tags": "tech, social network, startup"
@@ -74,8 +74,8 @@
           "userId": "wildrydes",
           "avatar": "bezos.png",
           "name": "Jeff Bezos",
-          "orgName": "Wild Rydes",
-          "region": "Fantasia",
+          "orgName": "Amazon",
+          "region": "Brazil",
           "about": "Hi I'm Jeff, an aspiring computer programmer. I'm looking for a microloan to fund my startup.",
           "orgAbout": "Wild Rydes is an app that offers peer-to-peer ridesharing on unicorns.",
           "network": [

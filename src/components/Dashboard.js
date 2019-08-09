@@ -64,10 +64,10 @@ class Dashboard extends Component {
                 <small className="title-country" style={{ "opacity": 0.5 }}>{l.region}</small>
               </h5>
               <p className="p-2 card-text text-muted">
-                $1,000 to $5,000 with 1% interest
+                {l.seeking}
             </p>
-              <small className="p-2 card-text text-muted" style={{ "opacity": 0.5 }}>Technology, Startups, America</small>
-              <button type="button" className="btn btn-info btn-view-prof">View Profile</button>
+              <small className="p-2 card-text text-muted" style={{ "opacity": 0.5 }}>{l.tags}</small>
+              <button type="button" className="btn btn-info btn-view-prof"><Link to='/profile' style={{ textDecoration: 'none', color: 'white' }}>View Profile</Link></button>
             </div>
           </div>
         </div>
@@ -147,8 +147,8 @@ class Dashboard extends Component {
             </div>
           </div>
           <div className="row card-row">
-            {this.props.userType === "borrower" && borrowDisp}
-            {this.props.userType !== "borrower" && loanDisp}
+            {this.props.userType !== "borrower" && borrowDisp}
+            {this.props.userType === "borrower" && loanDisp}
           </div>
           {/* <CardColumns>
             <Card>
