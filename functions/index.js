@@ -28,9 +28,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     
   function addToDb (agent) {
       var json = request.body;
-      json.outputContexts.forEach(function(context, index) {
-          agent.add(context.name);
-          if (JSON.stringify(context.name).includes('cedarprofilecreate-followup')) {
+      json.outputContexts.map((context, index) => {
+          if(context.name.includes('cedarprofilecreate-followup')) {
               data['name'] = context.parameters.firstName + " " + context.parameters.lastName;
               
               data['region'] = context.parameters.country;
@@ -42,9 +41,25 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
               data['orgName'] = context.parameters.orgName;
               
               data['loanAmount'] = context.parameters.loanAmount.amount;
-              
           }
-      });
+      })
+//      json.outputContexts.forEach(function(context, index) {
+//          agent.add(context.name);
+//          if (JSON.stringify(context.name).includes('cedarprofilecreate-followup')) {
+//              data['name'] = context.parameters.firstName + " " + context.parameters.lastName;
+//              
+//              data['region'] = context.parameters.country;
+//              
+//              data['contact'] = context.parameters.email;
+//              
+//              data['industry'] = context.parameters.industry;
+//              
+//              data['orgName'] = context.parameters.orgName;
+//              
+//              data['loanAmount'] = context.parameters.loanAmount.amount;
+//              
+//          }
+//      });
       //agent.add(data['region']);
       db.collection('borrowers').add(data);
   }
