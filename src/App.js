@@ -30,6 +30,7 @@ const db = app.firestore();
 function Main({ location }) {
   const [user, setUser] = useState('mark');
   const [selectedUser, setSelectedUser] = useState('bill');
+  const [visit, setVisit] = useState('false');
   const [userType, setUserType] = useState('borrower');
 
   console.log("Testing Database:");
@@ -68,7 +69,7 @@ function Main({ location }) {
 
   return (
     <div>
-      <Header user={user} userType={userType} setUserType={setUserType} />
+      <Header user={user} userType={userType} setUserType={setUserType} visit={visit} setVisit={setVisit} />
       <TransitionGroup className="transition-group">
         <CSSTransition
           key={location.key}

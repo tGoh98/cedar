@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { CardColumns, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import '../stylesheets/Dashboard.css'
 import gates from '../images/gates.jpg';
 import avatar from '../images/avatar.png';
@@ -10,6 +11,17 @@ import lendData from '../tempData/lenders.json'
 
 
 class Dashboard extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.handlePageChange = this.handlePageChange.bind(this);
+  }
+
+  handlePageChange() {
+
+  }
+
   render() {
 
     let borrowDisp = borrowData.data.map((b) => {
@@ -30,7 +42,7 @@ class Dashboard extends Component {
                 $1,000 to $5,000 with 1% interest
               </p>
               <small className="p-2 card-text text-muted" style={{ "opacity": 0.5 }}>Technology, Startups, America</small>
-              <button type="button" className="btn btn-info btn-view-prof">View Profile</button>
+              <button type="button" className="btn btn-info btn-view-prof" onClick={this.handlePageChange}><Link to='/profile' style={{ textDecoration: 'none', color: 'white' }}>View Profile</Link></button>
             </div>
           </div>
         </div>
