@@ -23,7 +23,8 @@ class SignUp extends Component {
             industry: "",
             contact: {},
             info: "",
-            tags: []
+            tags: [],
+            submitted: false
         }
 
         this.handleName = this.handleName.bind(this);
@@ -119,6 +120,10 @@ class SignUp extends Component {
         console.log("Info: " + this.state.info);
         console.log("Tags: ");
         console.log(this.state.tags);
+
+        this.setState({
+            submitted: true
+        });
     }
 
     render() {
@@ -137,63 +142,67 @@ class SignUp extends Component {
 
         return (
             <div className="container">
-                <h1>Create Your Profile</h1>
-                <form>
-                    <div className="form-group">
-                        <img className="avatar-img" src={avatarPlace} />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="firstName">Name</label>
-                        <input type="text" className="form-control" id="firstName" aria-describedby="nameHelp" onChange={this.handleName} />
-                        <small id="nameHelp" class="form-text text-muted">First and Last</small>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col">
-                            <label htmlFor="regionSelect">Region</label>
-                            <select className="form-control" id="regionSelect" onChange={this.handleRegion}>
-                                <option>-</option>
-                                {regionDisp}
-                            </select>
+                <div className="row over-form-row">
+
+                    <form className="form">
+                        <div className="form-group d-flex justify-content-center avatar-row">
+                            <img className="avatar-img" src={avatarPlace} />
                         </div>
-                        <div className="form-group col">
-                            <label htmlFor="countrySelect">Country</label>
-                            <select className="form-control" id="countrySelect" onChange={this.handleRegion}>
-                                <option>-</option>
-                                {countryDisp}
-                            </select>
+                        <div className="form-group">
+                            <label htmlFor="firstName">Name</label>
+                            <input type="text" className="form-control" id="firstName" aria-describedby="nameHelp" onChange={this.handleName} />
+                            <small id="nameHelp" class="form-text text-muted">First and Last</small>
                         </div>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="orgName">Organization Name</label>
-                        <input type="text" className="form-control" id="orgName" onChange={this.handleOrg} />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="industry">Organization Type</label>
-                        <input type="text" className="form-control" id="industry" onChange={this.handleIndustry} />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="about">About</label>
-                        <textarea className="form-control" rows="4" onChange={this.handleInfo}></textarea>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="contact-email">Email</label>
-                        <input type="email" className="form-control" id="contact-email" onChange={this.handleContact} />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="contact-phone">Phone Number</label>
-                        <input type="text" className="form-control" id="contact-phone" onChange={this.handleContact} />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="contact-web">Website</label>
-                        <input type="text" className="form-control" id="contact-web" onChange={this.handleContact} />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="add-tag">Tags</label>
-                        <input type="text" className="form-control" id="add-tag" aria-describedby="addTag" onChange={this.handleTags} />
-                        <small id="addTag" className="form-text text-muted">Separate tags with commas</small>
-                    </div>
-                    <button type="button" className="btn btn-info" onClick={this.onSubmit}>Submit</button>
-                </form>
+                        <div className="form-row">
+                            <div className="form-group col">
+                                <label htmlFor="regionSelect">Region</label>
+                                <select className="form-control" id="regionSelect" onChange={this.handleRegion}>
+                                    <option>-</option>
+                                    {regionDisp}
+                                </select>
+                            </div>
+                            <div className="form-group col">
+                                <label htmlFor="countrySelect">Country</label>
+                                <select className="form-control" id="countrySelect" onChange={this.handleRegion}>
+                                    <option>-</option>
+                                    {countryDisp}
+                                </select>
+                            </div>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="orgName">Organization Name</label>
+                            <input type="text" className="form-control" id="orgName" onChange={this.handleOrg} />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="industry">Organization Type</label>
+                            <input type="text" className="form-control" id="industry" onChange={this.handleIndustry} />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="about">About</label>
+                            <textarea className="form-control" rows="4" onChange={this.handleInfo}></textarea>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="contact-email">Email</label>
+                            <input type="email" className="form-control" id="contact-email" onChange={this.handleContact} />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="contact-phone">Phone Number</label>
+                            <input type="text" className="form-control" id="contact-phone" onChange={this.handleContact} />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="contact-web">Website</label>
+                            <input type="text" className="form-control" id="contact-web" onChange={this.handleContact} />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="add-tag">Tags</label>
+                            <input type="text" className="form-control" id="add-tag" aria-describedby="addTag" onChange={this.handleTags} />
+                            <small id="addTag" className="form-text text-muted">Separate tags with commas</small>
+                        </div>
+                        <div className="form-group">
+                            <button type="button" className="btn btn-info" onClick={this.onSubmit}>Submit</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         );
     }

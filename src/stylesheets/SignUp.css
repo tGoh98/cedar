@@ -1,5 +1,32 @@
+.sign-up-title {
+    text-align: center;
+}
+
+.over-form-row {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.form {
+    width: 100%;
+    padding: 2rem;
+}
+
 .avatar-img {
     border-radius: 50%;
-    height: 150px;
+    height: 200px;
     width: auto;
+}
+
+.avatar-img:hover {
+    cursor: pointer;
+}
+
+.avatar-row {
+    margin-bottom: 2rem;
+}
+
+.form-control:focus {
+    border-color: #17a2b8;
+    box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);;
 }
