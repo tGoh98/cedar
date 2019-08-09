@@ -13,7 +13,7 @@ class Profile extends Component {
     return (
       <div>
         <div className="container" style={{ paddingTop: 10 }}>
-          <div className="row profile-head">
+          <div className="row row-profile profile-head">
             <div className="col-3">
               <img src={profilePic} className="profileImg" alt="profile" />
             </div>
@@ -24,15 +24,15 @@ class Profile extends Component {
             </div>
           </div>
           <br />
-          <div className="row">
+          <div className="row row-profile">
             <h4>What is Facebook about?</h4>
             <p>Facebook is a company dedicated to giving people the power to build community and bring the world closer together. We were founded 15 years ago and have been growing at a tremendous rate ever since.</p>
           </div>
           <br />
-          <div className="row">
+          <div className="row row-profile">
             <h4>Network</h4>
           </div>
-          <div className="row">
+          <div className="row row-profile network-row">
             <CardColumns>
               <Card>
                 <Card.Img variant="top" src={gates} style={{ maxHeight: 250 }} />

@@ -5,16 +5,16 @@ require('firebase/firestore');
 
 const functions = require('firebase-functions');
 // const admin = require('firebase-admin');
-const {WebhookClient} = require('dialogflow-fulfillment');
-const {Card, Suggestion} = require('dialogflow-fulfillment');
+const { WebhookClient } = require('dialogflow-fulfillment');
+const { Card, Suggestion } = require('dialogflow-fulfillment');
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCcOvnTMYAJFBdZuzQawx8Z7tCgCXfylCo",
-    authDomain: "crollo-xxoykw.firebaseapp.com",
-    databaseURL: "https://crollo-xxoykw.firebaseio.com/",
-    projectId: "crollo-xxoykw",
-    storageBucket: "",
-    appId:"1:716632137718:web:75ba185462453105"
+  apiKey: "AIzaSyCcOvnTMYAJFBdZuzQawx8Z7tCgCXfylCo",
+  authDomain: "crollo-xxoykw.firebaseapp.com",
+  databaseURL: "https://crollo-xxoykw.firebaseio.com/",
+  projectId: "crollo-xxoykw",
+  storageBucket: "",
+  appId: "1:716632137718:web:75ba185462453105"
 };
 
 process.env.DEBUG = 'dialogflow:*'; // enables lib debugging statements
