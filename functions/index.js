@@ -24,37 +24,28 @@ const db = app.firestore();
 
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, response) => {
   const agent = new WebhookClient({ request, response });
+  var data = {};
     
   function addToDb (agent) {
-      var data = {};
-      var context = response['outputContexts'];
-      agent.add(context);
-      for (var i = 0; i < context.length; i++) {
-          if (context[i].includes('/cedarprofilecreate-followup')) {
-              data['name'] = context[i]['parameters']['firstName'] + " " + context[i]['parameters']['lastName'];
+      var json = request.body;
+      for (var context in json.outputContexts) {
+          if (context.name.includes('/cedarprofilecreate-followup')) {
+              data['name'] = context.parameters.firstName + " " + context.parameters.lastName;
               
-              data['region'] = context[i]['parameters']['country'];
+              data['region'] = context.parameters.country;
               
-              data['contact'] = context[i]['parameters']['email'];
+              data['contact'] = context.parameters.email;
               
-              data['industry'] = context[i]['parameters']['industry'][0];
+              data['industry'] = context.parameters.industry;
               
-              data['orgName'] = context[i]['parameters']['orgName'];
+              data['orgName'] = context.parameters.orgName;
               
-              data['loanAmount'] = context[i]['parameters']['loanAmount'];
+              data['loanAmount'] = context.parameters.loanAmount.amount;
               
           }
       }
-      
-      db.collection('borrowers').add(data)
-    .then(function() {
-      console.log("Document successfully written!");
-      agent.add("Thanks for creating a profile!");
-      data = {};
-    })
-    .catch(function(error) {
-      console.error("Error writing document: ", error);
-    });
+      //agent.add(data['region']);
+      db.collection('borrowers').add(data);
   }
     
   function editDb (agent) {
@@ -68,12 +59,13 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
       })
   }
   function readFromDb (agent) {
-    
+      
   }
 
   // Map from Dialogflow intent names to functions to be run when the intent is matched
   let intentMap = new Map();
+  intentMap.set('cedar.profile.create', readFromDb)
   intentMap.set('cedar.profile.create.loan_amount', addToDb);    
-  intentMap.set('ReadFromFirebase', readFromDb);
+  intentMap.set('ReadFromFirebase', editDb);
   agent.handleRequest(intentMap);
 });
